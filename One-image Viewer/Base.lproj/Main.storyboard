@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,51 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="One_image_Viewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzU-JC-f13">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPad_Pro_App_83.5pt" translatesAutoresizingMaskIntoConstraints="NO" id="2kc-hI-Mrr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2kc-hI-Mrr" firstAttribute="top" secondItem="RzU-JC-f13" secondAttribute="top" id="6Hw-pt-pl8"/>
+                                    <constraint firstAttribute="trailing" secondItem="2kc-hI-Mrr" secondAttribute="trailing" id="HdN-K7-Uoj"/>
+                                    <constraint firstItem="2kc-hI-Mrr" firstAttribute="centerX" secondItem="RzU-JC-f13" secondAttribute="centerX" id="U9q-Ky-3h8"/>
+                                    <constraint firstAttribute="bottom" secondItem="2kc-hI-Mrr" secondAttribute="bottom" id="WqK-0Q-dyB"/>
+                                    <constraint firstItem="2kc-hI-Mrr" firstAttribute="centerY" secondItem="RzU-JC-f13" secondAttribute="centerY" id="kTX-sZ-I8Z"/>
+                                    <constraint firstItem="2kc-hI-Mrr" firstAttribute="leading" secondItem="RzU-JC-f13" secondAttribute="leading" id="zE2-g3-mwg"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="LFf-kS-kvF"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RzU-JC-f13" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qbc-3X-A3o"/>
+                            <constraint firstItem="RzU-JC-f13" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qqk-gn-2tr"/>
+                            <constraint firstItem="RzU-JC-f13" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="w3i-9M-i2e"/>
+                            <constraint firstItem="RzU-JC-f13" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="x13-8o-XRb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="myImageVIew" destination="2kc-hI-Mrr" id="Ecp-Ne-he5"/>
+                        <outlet property="myScrollView" destination="RzU-JC-f13" id="MPI-Vj-xV9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iPad_Pro_App_83.5pt" width="83" height="83"/>
+    </resources>
 </document>

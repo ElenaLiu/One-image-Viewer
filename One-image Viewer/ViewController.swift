@@ -8,16 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
+
+    @IBOutlet weak var myScrollView: UIScrollView!
+
+    @IBOutlet weak var myImageVIew: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //The minimum is the size fit boundary of root view.
+        self.myScrollView.minimumZoomScale = 1.0
+        //The maximum zooming ratio is 2.0
+        self.myScrollView.maximumZoomScale = 2.0
+        self.myImageVIew.contentMode = .scaleAspectFit
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //Add Zooming func for imgaeView
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return self.myImageVIew
     }
 
 
